@@ -49,14 +49,20 @@ function Test-AzureIotDpsLifeCycle
 	# Create or Update Resource Group
 	$resourceGroup = New-AzResourceGroup -Name $ResourceGroupName -Location $Location 
 
-	# Create Iot Hub Device Provisioning Service
-	$newIotDps1 = New-AzIoTDps -ResourceGroupName $ResourceGroupName -Name $IotDpsName -Location $Location
+	# Add Tags to Iot Hub Device Provisioning Service
+	$tags = @{}
+	$tags.Add($Tag1Key, $Tag1Value)
 
+	# Create Iot Hub Device Provisioning Service
+	$newIotDps1 = New-AzIoTDps -ResourceGroupName $ResourceGroupName -Name $IotDpsName -Location $Location -Tag $tags
+	
 	# Get Iot Hub Device Provisioning Service
 	$iotDps = Get-AzIoTDps -ResourceGroupName $ResourceGroupName -Name $IotDpsName 
 	Assert-True { $iotDps.Name -eq $IotDpsName }
 	Assert-True { $iotDps.Properties.AllocationPolicy -eq $CurrentAllocationPolicy }
 	Assert-True { $iotDps.Sku.Name -eq $Sku }
+	Assert-True { $newIotDps1.Tags.Count -eq 1 }
+	Assert-True { $newIotDps1.Tags.Item($Tag1Key) -eq $Tag1Value }	
 
 	# Update Iot Hub Device Provisioning Service Allocation Policy
 	$updatedIotDps1 = Get-AzIoTDps -ResourceGroupName $ResourceGroupName -Name $IotDpsName | Update-AzIotDps -AllocationPolicy $NewAllocationPolicy

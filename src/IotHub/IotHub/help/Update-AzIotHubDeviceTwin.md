@@ -60,10 +60,14 @@ Returns the device twin object with updated tags property.
 
 ### Example 4
 ```powershell
+PS C:\> $updatedTag = @{}
+PS C:\> $updatedTag.add("key0","value0")
+PS C:\> $updatedDesired =@{}
+PS C:\> $updatedDesired.add("desiredkey","desiredvalue")
 PS C:\> Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Desired $updatedDesired
 ```
 
-Returns the replaced device twin object.
+Returns the updated tags and desired properties of a device twin object.
 
 ## PARAMETERS
 
@@ -234,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

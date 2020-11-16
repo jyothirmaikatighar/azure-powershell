@@ -24,19 +24,12 @@ You can update the tags properties of an IotHub.
 
 ### Example 1
 ```
-PS C:\> Update-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -Tag @tags
-
-Id             : /subscriptions/91d1xxxx-xxxx-xxxx-xxxx-xxxxxxxxddc0/resourceGroups/myresourcegroup/providers/Microsoft.De
-                 vices/IotHubs/myiotdps
-Name           : myiotdps
-Type           : Microsoft.Devices/IotHubs
-Location       : East US
-Tags           : {[k1, v1]}
-Properties     : Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties
-Sku            : Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubSkuInfo
+PS C:\> $updatedTag = @{}
+PS C:\> $updatedTag.add("key0","value0")
+PS C:\> Update-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -Tag $updatedTag
 ```
 
-Add "@tags" to the Tag of an Azure IoT Hub "myiotdps".
+Update "tags" of an IoT Hub.
 
 ## PARAMETERS
 
@@ -147,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

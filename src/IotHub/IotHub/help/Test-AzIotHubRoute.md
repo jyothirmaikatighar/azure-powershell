@@ -95,6 +95,19 @@ Syntax error. error    1                 29                  1               30
 
 Test a specific route and showing the reason of failure.
 
+### Example 4
+```
+PS C:\> $ap = @{}
+PS C:\> $ap.add("key0","value0")
+PS C:\> $sp = @{}
+PS C:\> $sp.add("key1", "value1")
+PS C:\> Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -AppProperty $ap -SystemProperty $sp
+
+Result : true
+```
+
+Test a specific route with AppProperty and SystemProperty.
+
 ## PARAMETERS
 
 ### -AppProperty
@@ -264,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

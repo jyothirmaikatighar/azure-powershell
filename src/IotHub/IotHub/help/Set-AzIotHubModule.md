@@ -14,9 +14,9 @@ Update a module on a target IoT device in an IoT Hub.
 
 ### ResourceSet (Default)
 ```
-Set-AzIotHubModule [-ResourceGroupName] <String> [-IotHubName] <String> [-DeviceId] <String> [-ModuleId] <String>
- [-AuthMethod <PSDeviceAuthType>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-AzIotHubModule [-ResourceGroupName] <String> [-IotHubName] <String> [-DeviceId] <String>
+ [-ModuleId] <String> [-AuthMethod <PSDeviceAuthType>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObjectSet
@@ -51,7 +51,7 @@ ConnectionState            : Disconnected
 ConnectionStateUpdatedTime : 1/1/0001 12:00:00 AM
 CloudToDeviceMessageCount  : 0
 Authentication             : Sas
-ManagedBy                  : 
+ManagedBy                  :
 ```
 
 Update authorization type of an Iot device module.
@@ -149,21 +149,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrimaryThumbprint
-Explicit self-signed certificate thumbprint to use for primary key.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of the Resource Group
 
@@ -191,21 +176,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -SecondaryThumbprint
-Explicit self-signed certificate thumbprint to use for secondary key.
-
-```yaml
-Type:System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -241,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -254,5 +224,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Azure.Commands.Management.IotHub.Models.PSModule
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS
